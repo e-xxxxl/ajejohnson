@@ -55,7 +55,7 @@ export default function Section1() {
             <div className="relative h-16 sm:h-20 lg:h-28 mb-6">
               <div className="absolute inset-0 flex items-center justify-center">
                 <h2
-                  className="text-4xl sm:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent transition-all duration-700"
+                  className="text-4xl sm:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-green-400 to-white bg-clip-text text-transparent transition-all duration-700"
                   key={rotatingWord}
                   style={{
                     animation: 'fadeInOut 4s ease-in-out',
@@ -82,7 +82,7 @@ export default function Section1() {
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button className="group px-6 sm:px-8 py-3 sm:py-4 rounded-lg border border-white/20 text-white font-semibold text-sm sm:text-base transition-all duration-300 hover:border-white/40 hover:bg-white/5 hover:shadow-xl hover:shadow-white/10 hover:-translate-y-1">
-              Let's Build Together
+              Download Resume
             </button>
           </div>
 
