@@ -1,12 +1,10 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
+import Header from '../Nav/Header'
 
 const NavPage = () => {
   return (
     <>
-    
-    <Navbar/>
-    
+    <Header/>
     </>
   )
 }
