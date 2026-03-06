@@ -1,10 +1,33 @@
 @import "tailwindcss";
 
-*{
-  /* margin: 0;
+* {
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
   padding: 0;
-  box-sizing: border-box; */
-    font-family: "Space Grotesk", sans-serif;
-   
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-color: #0F1314;
+}
 
+.header {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.nav {
+  margin-top: -65px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 250px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+ cursor: default;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+  color: #fff;
+  position: sticky
 }
