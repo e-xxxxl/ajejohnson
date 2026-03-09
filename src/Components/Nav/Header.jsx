@@ -9,9 +9,10 @@ const Header = () => {
         <h1>Emmanuel</h1>
       </div>
       <div className='links'>
-        <a href="#section1">works</a>
-        <a href="#section2">mentality</a>
-        <a href="#section3">contact</a>
+       <button>about</button>
+        <button href="#section1">works</button>
+        <button href="#section2">fun</button>
+        <button href="#section3">contact</button>
       </div>
     </div>
     
