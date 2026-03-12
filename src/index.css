@@ -13,28 +13,57 @@
   font-family: "Roboto Condensed", sans-serif;
 }
 
+.header-container {
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
 .nav {
-  margin-top: -65px;
+  margin-top: 0px;
   font-family: "Roboto Condensed", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-size: 250px;
+  font-size: clamp(80px, 19vw, 242px); /* Responsive font size */
   text-align: center;
   text-transform: uppercase;
   color: #fff;
- cursor: default;
+  cursor: default;
+  line-height: 1.2; /* Better spacing for smaller screens */
+  word-break: break-word; /* Prevents overflow on very small screens */
+  animation: fadeIn 0.8s ease-in-out 0.2s forwards;
 }
+
 .links {
   display: flex;
   justify-content: center;
-  gap: 300px;
-   font-size: 15px;
+  gap: 20px; /* Reduced gap for mobile */
+  font-size: 15px;
   color: #fff;
   position: sticky;
-   transition: all 0.3s ease;
-   text-decoration: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  flex-wrap: wrap; /* Allows buttons to wrap on small screens */
+  padding: 10px 0;
+  animation: fadeIn 0.8s ease-in-out 0.4s forwards;
 }
-.links button{
+
+.links button {
   border-width: 40px;
   border: grey solid 1px;
   background-color: transparent;
@@ -42,16 +71,107 @@
   border-radius: 12px;
   width: 80px;
   height: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
+/* Staggered animation for each button */
+.links button:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.links button:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.links button:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.links button:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+
 .links button:hover {
   color: #FC8102;
+  border-color: #FC8102;
+   transform: scale(1.05); /* Added slight scale on hover */
 }
-.main-section{
-  color: #fff;
-  margin-left: 500px;
-  margin-top: 170px;
+
+/* Tablet Responsive */
+@media screen and (max-width: 768px) {
+  .nav {
+    font-size: clamp(60px, 12vw, 150px);
+    margin-top: 0px;
+  }
+  
+  .links {
+    gap: 15px;
+  }
+  
+  .links button {
+    width: 70px;
+    height: 28px;
+    font-size: 14px;
+  }
 }
-.main-section span{
-  font-size: 20px;
-  margin-top: 100px;
+
+/* Mobile Responsive */
+@media screen and (max-width: 480px) {
+  .header-container {
+    padding: 0 10px;
+  }
+  
+  .nav {
+    font-size: clamp(40px, 17vw, 80px);
+    margin-top: 15px;
+  }
+  
+  .links {
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .links button {
+    width: 65px;
+    height: 28px;
+    font-size: 12px;
+    flex: 0 1 auto; /* Allows buttons to shrink if needed */
+  }
+}
+
+/* Small Mobile Responsive */
+@media screen and (max-width: 320px) {
+  .nav {
+    font-size: clamp(30px, 8vw, 40px);
+    margin-top: -20px;
+  }
+  
+  .links {
+    gap: 8px;
+  }
+  
+  .links button {
+    width: 60px;
+    height: 26px;
+    font-size: 11px;
+  }
+}
+
+/* Optional: Add a subtle glow effect on fade-in */
+@keyframes glowIn {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 0 rgba(252, 129, 2, 0);
+  }
+  50% {
+    opacity: 0.5;
+    text-shadow: 0 0 10px rgba(252, 129, 2, 0.5);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 0 rgba(252, 129, 2, 0);
+  }
 }
