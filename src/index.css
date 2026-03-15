@@ -21,6 +21,12 @@ body{
   padding: 0 20px;
   
 }
+.work-g{
+  margin-top: 40px;
+}
+.work-gg{
+  margin-top:20px;
+}
 
 /* Fade-in Animation */
 @keyframes fadeIn {

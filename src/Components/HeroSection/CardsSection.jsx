@@ -71,16 +71,16 @@ const CardsSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Minimalist header */}
         <div className=" mb-20">
-          <h2 className=" text-6xl md:text-7xl font-bold tracking-tight text-white mb-4">
+          <h3 className=" text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
             works
-          </h2>
+          </h3>
           <p className="text-gray-400 text-lg font-light">
             selected projects & experiments
           </p>
         </div>
 
         {/* Masonry-inspired grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="work-g grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {mockups.map((mockup) => (
             <div
               key={mockup.id}
@@ -108,7 +108,7 @@ const CardsSection = () => {
                 </div>
 
                 {/* Image Container - Core Visual */}
-                <div className="relative overflow-hidden rounded-lg mb-5 bg-gray-900 flex-grow">
+                <div className="work-gg relative overflow-hidden rounded-lg mb-5 bg-gray-900 flex-grow">
                   {/* Gradient overlay on hover */}
                   <div
                     className={`absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-500 bg-gradient-to-br ${mockup.color} z-10 pointer-events-none`}
@@ -139,7 +139,7 @@ const CardsSection = () => {
         </div>
 
         {/* Footer note */}
-        <div className="mt-24 pt-12 border-t border-gray-800">
+        <div className="work-g mt-24 pt-12 border-t border-gray-800">
           <p className="text-gray-500 text-sm font-light max-w-2xl">
             Each project represents a unique blend of strategy, design, and
             execution. Click to explore more details.
