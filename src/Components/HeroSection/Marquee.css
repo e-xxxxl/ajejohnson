@@ -1,0 +1,101 @@
+.marquee-container {
+    top: 100px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.marquee-title {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  z-index: 2;
+  padding-right: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.marquee-content {
+  margin-left: 180px; /* Space for the title */
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 2rem;
+  margin: 0 0.25rem;
+  border-radius: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.marquee-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.marquee-item i {
+  font-size: 1.5rem;
+}
+
+.marquee-item span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Make sure Devicon fonts are loaded */
+@import url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .marquee-title {
+    font-size: 1.2rem;
+    left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .marquee-content {
+    margin-left: 120px;
+  }
+  
+  .marquee-item {
+    padding: 0.4rem 1.5rem;
+  }
+  
+  .marquee-item i {
+    font-size: 1.2rem;
+  }
+  
+  .marquee-item span {
+    font-size: 0.8rem;
+  }
+}

@@ -1,7 +1,10 @@
 import React from "react";
 import genpay from "../../assets/images/genpayshot.png";
 import xrepublik from "../../assets/images/xrepublik.png";
-
+import quickship from "../../assets/images/quickshipp.png";
+import tekuvo from "../../assets/images/tekuvv.png";
+import deadline from "../../assets/images/deadline.jfif";
+import bookit from "../../assets/images/bookitt.png";
 const CardsSection = () => {
   const mockups = [
     {
@@ -19,26 +22,26 @@ const CardsSection = () => {
     {
       id: 3,
       labels: ["QuickShip", "logistics", "live"],
-      image: "https://picsum.photos/id/102/1200/900",
-      alt: "Studio Mockup",
+      image: quickship,
+      alt: "QuickShip",
     },
     {
       id: 4,
       labels: ["tekuvo", "agency", "live"],
-      image: "https://picsum.photos/id/201/1200/900",
-      alt: "Mobile App Mockup",
+      image: tekuvo,
+      alt: "Tekuvo",
     },
     {
       id: 5,
       labels: ["bip", "saas", "development"],
-      image: "https://picsum.photos/id/29/1200/900",
-      alt: "Packaging Mockup",
+      image: deadline,
+      alt: "bip Mockup",
     },
     {
       id: 6,
-      labels: ["surge", "Billboard", "2025"],
-      image: "https://picsum.photos/id/133/1200/900",
-      alt: "Billboard Mockup",
+      labels: ["bookit", "Hotel management", "development"],
+      image: bookit,
+      alt: "Bookit Mockup",
     },
   ];
 
