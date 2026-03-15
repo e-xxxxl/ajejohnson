@@ -1,5 +1,7 @@
 import React from "react";
 import genpay from "../../assets/images/genpayshot.png";
+import xrepublik from "../../assets/images/xrepublik.png";
+
 const CardsSection = () => {
   const mockups = [
     {
@@ -11,8 +13,8 @@ const CardsSection = () => {
     {
       id: 2,
       labels: ["X-republik", "entertainment", "development"],
-      image: "https://picsum.photos/id/1018/1200/900",
-      alt: "Shtender Mockup",
+      image: xrepublik,
+      alt: "X-republik ",
     },
     {
       id: 3,
@@ -53,7 +55,7 @@ const CardsSection = () => {
           {mockups.map((mockup) => (
             <div key={mockup.id} className="group">
               {/* LARGER rectangular label bar (professional height + extra width) */}
-              <div className=" px-10 py-8 flex justify-between items-center rounded-none">
+              <div className="px-10 py-8 flex justify-between items-center rounded-none">
                 {/* Left: Name only (plain white text) */}
                 <span className="font-semibold text-xl tracking-tighter text-white">
                   {mockup.labels[0]}
@@ -65,7 +67,7 @@ const CardsSection = () => {
                     const pillClasses =
                       index === 0
                         ? "text-white"
-                        : " text-orange-500";
+                        : "text-orange-500";
 
                     return (
                       <span
@@ -79,12 +81,12 @@ const CardsSection = () => {
                 </div>
               </div>
 
-              {/* Image shifted down */}
+              {/* Image with fixed height to show landing page */}
               <div className="relative mt-6 overflow-hidden shadow-2xl bg-zinc-900">
                 <img
                   src={mockup.image}
                   alt={mockup.alt}
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-[400px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </div>
