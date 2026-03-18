@@ -135,7 +135,7 @@ const TicTacToeAI = () => {
           <h3 className=" text-3xl md:text-3xl font-bold tracking-tight text-white mb-4">
             fun
           </h3>
-          <p className="text-gray-400 text-lg font-light">
+          <p className="text-gray-400 text-lg font-light;">
             all work and no play makes emmanuel a dull boy
           </p>
         </div>
