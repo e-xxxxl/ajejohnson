@@ -3,7 +3,7 @@ import Header from '../Nav/Header'
 import MainSection from '../HeroSection/MainSection'
 import CardsSection from '../HeroSection/CardsSection'
 import Marquee from '../HeroSection/marquee'
-import TicTacToeAI from '../HeroSection/TicTacToeAi'
+import TicTacToe from '../HeroSection/TicTacToe'
 
 const NavPage = () => {
   return (
@@ -12,7 +12,7 @@ const NavPage = () => {
     <MainSection/>
     <CardsSection/>
     <Marquee/>
-    <TicTacToeAi/>
+    <TicTacToe/>
     </>
   )
 }
