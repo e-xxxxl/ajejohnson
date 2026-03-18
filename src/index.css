@@ -119,6 +119,12 @@ body{
   display: flex;
   gap: 400px;
 }
+.main-toe{
+  text-align: center;
+  color: #fff;
+  font-family: "sans-serif";
+  margin-top: 150px;
+}
 
 /* Tablet Responsive */
 @media screen and (max-width: 768px) {
@@ -139,10 +145,14 @@ body{
   .tic-tac-toe-section{
   display: grid;
   gap: 0px;
+
 }
 .fun-text{
   padding: 0 20px;
-  margin-top: 200px;
+  margin-top: 140px;
+}
+.main-toe{
+  margin-top: 60px;
 }
 
 
@@ -177,7 +187,10 @@ body{
 }
 .fun-text{
   padding: 0 20px;
-  margin-top: 200px;
+  margin-top: 140px;
+}
+.main-toe{
+  margin-top: 60px;
 }
 }
 
@@ -203,7 +216,10 @@ body{
 }
 .fun-text{
   padding: 0 20px;
-  margin-top: 200px;
+  margin-top: 140px;
+}
+.main-toe{
+  margin-top: 60px;
 }
 }
 

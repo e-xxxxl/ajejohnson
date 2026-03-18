@@ -139,11 +139,8 @@ const TicTacToe = () => {
             all work and no play makes emmanuel a dull boy
           </p>
         </div>
-    <div style={{
-      textAlign: "center",
-      color: "#fff",
-      fontFamily: "sans-serif",
-      marginTop: "150px"
+    <div className="main-toe" style={{
+      
     }}>
       <h2 style={{ marginBottom: "10px" }}>Tic Tac Toe</h2>
 
