@@ -108,6 +108,17 @@ body{
   border-color: #FC8102;
    transform: scale(1.05); /* Added slight scale on hover */
 }
+.main-text{
+   padding: 0 20px;
+}
+.fun-text{
+  padding: 0 20px;
+  margin-top: 350px;
+}
+.tic-tac-toe-section{
+  display: flex;
+  gap: 400px;
+}
 
 /* Tablet Responsive */
 @media screen and (max-width: 768px) {
@@ -125,6 +136,16 @@ body{
     height: 28px;
     font-size: 14px;
   }
+  .tic-tac-toe-section{
+  display: grid;
+  gap: 0px;
+}
+.fun-text{
+  padding: 0 20px;
+  margin-top: 200px;
+}
+
+
 }
 
 /* Mobile Responsive */
@@ -150,6 +171,14 @@ body{
     font-size: 12px;
     flex: 0 1 auto; /* Allows buttons to shrink if needed */
   }
+    .tic-tac-toe-section{
+  display: grid;
+  gap: 0px;
+}
+.fun-text{
+  padding: 0 20px;
+  margin-top: 200px;
+}
 }
 
 /* Small Mobile Responsive */
@@ -168,6 +197,14 @@ body{
     height: 26px;
     font-size: 11px;
   }
+    .tic-tac-toe-section{
+  display: grid;
+  gap: 0px;
+}
+.fun-text{
+  padding: 0 20px;
+  margin-top: 200px;
+}
 }
 
 /* Optional: Add a subtle glow effect on fade-in */

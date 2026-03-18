@@ -113,7 +113,7 @@ const MainSection = () => {
               ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}
             `}
           >
-            <p className="text-[22px] md:text-xl lg:text-[26px] leading-tight font-light tracking-wide">
+            <p className="main-text text-[20px] md:text-xl lg:text-[26px] leading-tight font-light tracking-wide">
               I'm Ajejohnson Emmanuel, a full-stack developer passionate about building
               modern web applications. I help businesses turn ideas into
               powerful digital products… and spend a healthy amount of time
