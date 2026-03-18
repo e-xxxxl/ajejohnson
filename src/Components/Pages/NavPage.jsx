@@ -12,7 +12,7 @@ const NavPage = () => {
     <MainSection/>
     <CardsSection/>
     <Marquee/>
-    <TicTacToeAI/>
+    <TicTacToeAi/>
     </>
   )
 }

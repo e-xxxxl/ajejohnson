@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const TicTacToeAI = () => {
+const TicTacToeAi = () => {
   const getStoredScores = () => {
     const saved = localStorage.getItem("ttt-scores");
     return saved ? JSON.parse(saved) : { player: 0, ai: 0, draw: 0 };
@@ -222,4 +222,4 @@ const TicTacToeAI = () => {
   );
 };
 
-export default TicTacToeAI;
+export default TicTacToeAi;
