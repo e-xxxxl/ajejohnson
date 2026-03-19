@@ -1,5 +1,4 @@
 import React from 'react';
-import './Marquee.css'; // We'll create this CSS file
 
 const Marquee = () => {
   const techStacks = [
@@ -15,27 +14,38 @@ const Marquee = () => {
     { name: 'PostgreSQL', icon: 'postgresql', color: '#336791' },
     { name: 'Docker', icon: 'docker', color: '#2496ED' },
     { name: 'AWS', icon: 'amazonwebservices', color: '#FF9900' },
-    { name: 'Vue.js', icon: 'vuejs', color: '#4FC08D' },
-    { name: 'Angular', icon: 'angularjs', color: '#DD0031' }
   ];
 
-  // Duplicate the array to create seamless loop
-  const marqueeItems = [...techStacks, ...techStacks];
+  const marqueeItems = [...techStacks, ...techStacks, ...techStacks]; // Triple for smooth loop
 
   return (
-    <div className="marquee-container">
-      <h1 className="marquee-title">my stack</h1>
-      <div className="marquee-content">
-        <div className="marquee-track">
+    <section className="py-20 bg-black overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+          my stack
+        </h2>
+        <p className="text-gray-400 text-lg font-light">
+          technologies I work with
+        </p>
+      </div>
+
+      <div className="relative">
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
+        
+        <div className="flex animate-marquee whitespace-nowrap">
           {marqueeItems.map((tech, index) => (
-            <div key={index} className="marquee-item">
-              <i className={`devicon-${tech.icon}-plain colored`}></i>
-              <span>{tech.name}</span>
+            <div
+              key={`${tech.name}-${index}`}
+              className="inline-flex items-center gap-3 mx-6 px-6 py-3 bg-gray-900/50 rounded-full border border-gray-800"
+            >
+              <i className={`devicon-${tech.icon}-plain text-2xl`} style={{ color: tech.color }} />
+              <span className="text-white font-medium">{tech.name}</span>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
