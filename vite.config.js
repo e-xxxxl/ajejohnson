@@ -1,9 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import outray from '@outray/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(),outray()],
+  plugins: [react(), tailwindcss()],
+  server: {
+    port: process.env.PORT ? Number(process.env.PORT) : 5173,
+  },
+  build: {
+    assetsInlineLimit: 2048,
+  },
 })

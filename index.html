@@ -2,17 +2,87 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-<title>eajejohnson</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <title>Ajejohnson Emmanuel — Full-Stack Developer & Digital Product Builder</title>
+    <meta
+      name="description"
+      content="Ajejohnson Emmanuel is a full-stack developer and digital product builder. I design and build web products end to end — the interface, the API, and the systems that keep them running."
+    />
+    <meta name="author" content="Ajejohnson Emmanuel" />
+    <meta name="theme-color" content="#f4f1ea" />
+    <link rel="canonical" href="https://ajejohnson.tech/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ajejohnson Emmanuel" />
+    <meta property="og:url" content="https://ajejohnson.tech/" />
+    <meta property="og:title" content="Ajejohnson Emmanuel — Full-Stack Developer & Digital Product Builder" />
+    <meta
+      property="og:description"
+      content="Full-stack developer and digital product builder. I take web products from a rough brief to something live and dependable."
+    />
+    <meta property="og:image" content="https://ajejohnson.tech/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ajejohnson Emmanuel — Full-Stack Developer & Digital Product Builder" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ajejohnson Emmanuel — Full-Stack Developer & Digital Product Builder" />
+    <meta
+      name="twitter:description"
+      content="Full-stack developer and digital product builder. I take web products from a rough brief to something live and dependable."
+    />
+    <meta name="twitter:image" content="https://ajejohnson.tech/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ajejohnson Emmanuel",
+        "url": "https://ajejohnson.tech",
+        "jobTitle": "Full-Stack Developer & Digital Product Builder",
+        "email": "mailto:eajejohnson@gmail.com",
+        "knowsAbout": [
+          "Full-stack development",
+          "Frontend development",
+          "Backend and API development",
+          "Product development",
+          "React",
+          "Node.js"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Arm scroll-reveal only when the browser can drive it. Without this
+      // class, all content renders fully visible (no-JS / reduced-motion safe).
+      try {
+        if (
+          'IntersectionObserver' in window &&
+          !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ) {
+          document.documentElement.classList.add('reveal-ready')
+        }
+      } catch (e) {}
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
