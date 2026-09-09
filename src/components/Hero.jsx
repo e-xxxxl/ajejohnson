@@ -25,7 +25,7 @@ export default function Hero() {
           <div className="flex flex-col justify-end gap-4">
             <div className="h-px w-full bg-line-strong" />
             <div className="flex items-baseline justify-between text-sm text-ink-faint">
-              <span className="font-mono">{site.location}</span>
+              {/* <span className="font-mono">{site.location}</span> */}
               <a
                 href="#work"
                 className="link-underline font-mono text-ink transition-colors"
