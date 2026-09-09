@@ -11,7 +11,7 @@ import SignatureFooter from './components/SignatureFooter'
 /**
  * Deep links (e.g. /#contact) need re-aligning as late-loading fonts and
  * images reflow the page under the anchor. Re-run the jump a few times over
- * the first second, and once more when fonts settle — but never after the
+ * the first second, and once more when fonts settle, but never after the
  * visitor has started scrolling themselves.
  */
 function useHashAlign() {

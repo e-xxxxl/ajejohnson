@@ -19,8 +19,8 @@ function Heading({ project, n }) {
 }
 
 /**
- * `wide`  — image spans the column, details sit beneath in two columns.
- * `split` — image and details share a row, alternating side each time.
+ * `wide`  : image spans the column, details sit beneath in two columns.
+ * `split` : image and details share a row, alternating side each time.
  */
 export default function FeaturedProject({ project, n, layout = 'split', flip = false }) {
   if (layout === 'wide') {

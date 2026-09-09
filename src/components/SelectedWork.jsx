@@ -12,7 +12,7 @@ export default function SelectedWork() {
           index="01"
           id="Selected work"
           title="The projects that best show what I can build."
-          lead="A short list on purpose. Six products and sites, chosen for range rather than count — commerce, publishing, logistics, healthcare and more, each taken from brief to live."
+          lead="A short list on purpose. Six products and sites, chosen for range rather than count: commerce, publishing, logistics, healthcare and more, each taken from brief to live."
         />
 
         <div className="mt-20 space-y-24 sm:mt-24 sm:space-y-32">
@@ -33,8 +33,8 @@ export default function SelectedWork() {
             <span className="eyebrow">Also built</span>
           </div>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            Two more sites where the work was mostly design and front-end &mdash;
-            still shipped, still in use.
+            Two more sites where the work was mostly design and front-end. Still
+            shipped, still in use.
           </p>
         </Reveal>
 

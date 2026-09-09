@@ -49,7 +49,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern", "liga", "calt";
-    /* clip, not hidden — hidden on body spawns a nested scroll container */
+    /* clip, not hidden: hidden on body spawns a nested scroll container */
     overflow-x: clip;
   }
 

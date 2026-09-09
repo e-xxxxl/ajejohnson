@@ -15,11 +15,11 @@ export default function Hero() {
 
         <div className="mt-10 grid gap-x-16 gap-y-8 sm:mt-14 lg:grid-cols-[1.1fr_0.9fr]">
           <p className="max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl">
-            I&rsquo;m {site.name} &mdash; a developer who works across the whole
-            stack: the interface people use, the APIs and data behind it, and the
-            parts that keep it running once it&rsquo;s live. I build with
-            businesses, founders and teams who need something real shipped, not
-            just designed.
+            I&rsquo;m {site.name}, a developer who works across the whole stack:
+            the interface people use, the APIs and data behind it, and the parts
+            that keep it running once it&rsquo;s live. I build with businesses,
+            founders and teams who need something real shipped, not just
+            designed.
           </p>
 
           <div className="flex flex-col justify-end gap-4">

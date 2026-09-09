@@ -12,7 +12,7 @@ import fembos from '../assets/images/work/opt/fembos.webp'
 import fembosSm from '../assets/images/work/opt/fembos-sm.webp'
 
 /**
- * Ordered by how strongly each project demonstrates the range of the work —
+ * Ordered by how strongly each project demonstrates the range of the work,
  * not chronologically. The first four carry full case-study layouts; the
  * last two sit in a compact secondary row.
  */
@@ -24,7 +24,7 @@ export const projects = [
     role: 'Full-stack development, with Tekuvo and Marvex',
     stack: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Paystack'],
     description:
-      'GenPay is a platform for discovering events and handling tickets end to end — browsing what is on, buying and reselling tickets, and managing an account around it. It is built to behave like a product, not a brochure.',
+      'GenPay is a platform for discovering events and handling tickets end to end: browsing what is on, buying and reselling tickets, and managing an account around it. It is built to behave like a product, not a brochure.',
     contributions: [
       'Event discovery and browsing',
       'Ticket purchase and resale flows',
@@ -81,7 +81,7 @@ export const projects = [
     role: 'Full-stack development',
     stack: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     description:
-      'The official site for a Lagos football club — club news, fixtures and results, a squad section, and shop and ticketing entry points, held together under one identity.',
+      'The official site for a Lagos football club, with club news, fixtures and results, a squad section, and shop and ticketing entry points, held together under one identity.',
     contributions: [
       'News and press-release publishing',
       'Fixtures, results and squad sections',

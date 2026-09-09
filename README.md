@@ -1,13 +1,13 @@
 # ajejohnson.tech
 
-Personal portfolio for Ajejohnson Emmanuel — full-stack developer and digital
+Personal portfolio for Ajejohnson Emmanuel, full-stack developer and digital
 product builder.
 
 ## Stack
 
 - **Vite** + **React 19**
 - **Tailwind CSS v4** (`@tailwindcss/vite`, tokens in `src/index.css`)
-- **sharp** — build-time image / asset generation only (dev dependency)
+- **sharp** for build-time image / asset generation only (dev dependency)
 
 No router, no animation library. One page, composed from sections in
 `src/components/`.
@@ -30,8 +30,8 @@ npm run preview
 
 All copy and project data live in two files:
 
-- `src/data/site.js` — name, role, email, location, social links
-- `src/data/projects.js` — the six projects (order, copy, roles, stack, links)
+- `src/data/site.js` for name, role, email, location, social links
+- `src/data/projects.js` for the six projects (order, copy, roles, stack, links)
 
 ## Images
 

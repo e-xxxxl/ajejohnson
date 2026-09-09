@@ -3,7 +3,7 @@ import Reveal from './Reveal'
 const CAPABILITIES = [
   {
     title: 'Full-stack development',
-    body: 'One person across the whole build — interface, API, database and deployment — so the parts fit together.',
+    body: 'One person across the whole build: interface, API, database and deployment, so the parts fit together.',
   },
   {
     title: 'Frontend development',

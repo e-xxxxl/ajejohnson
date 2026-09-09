@@ -21,7 +21,7 @@ const og = Buffer.from(`
   <text x="88" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="92" fill="#1c1a17">Ajejohnson Emmanuel</text>
   <text x="92" y="372" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#57514a">Full-Stack Developer &amp; Digital Product Builder</text>
   <line x1="92" y1="430" x2="272" y2="430" stroke="#1c1a17" stroke-opacity="0.28" stroke-width="2"/>
-  <text x="92" y="512" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#8b8578">Selected work — GenPay · TalkNaija Media · QuickShip Africa · Eko United FC</text>
+  <text x="92" y="512" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#8b8578">Selected work · GenPay · TalkNaija Media · QuickShip Africa · Eko United FC</text>
 </svg>`)
 
 await sharp(og).png().toFile('public/og-image.png')

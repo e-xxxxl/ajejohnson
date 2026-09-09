@@ -37,17 +37,17 @@ export default function About() {
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-ink-soft">
               <p>
                 I&rsquo;m a full-stack developer. In practice that means I&rsquo;m
-                comfortable anywhere in a project &mdash; building interfaces in
-                React, writing the APIs and data models behind them in Node, and
-                setting up the payments, authentication and admin tools that turn
-                a demo into something a business can run on.
+                comfortable anywhere in a project: building interfaces in React,
+                writing the APIs and data models behind them in Node, and setting
+                up the payments, authentication and admin tools that turn a demo
+                into something a business can run on.
               </p>
               <p>
                 Most of my work is building products with founders and small
                 teams: taking a rough idea, working out what it actually needs to
                 do, and shipping a version that holds up. I pay attention to the
-                things people feel &mdash; how quickly a page loads, whether a
-                form makes sense, what happens when something goes wrong.
+                things people feel: how quickly a page loads, whether a form
+                makes sense, what happens when something goes wrong.
               </p>
               <p>
                 I like working directly with the people whose business depends on

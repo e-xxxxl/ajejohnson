@@ -20,7 +20,7 @@ export default function SignatureFooter() {
             src={signature}
             width="465"
             height="117"
-            alt={`${site.name} — signature`}
+            alt={`${site.name} signature`}
             className="h-auto w-[clamp(220px,42vw,440px)]"
             loading="lazy"
             decoding="async"
