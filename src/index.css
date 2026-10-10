@@ -2,23 +2,31 @@
 
 /* ------------------------------------------------------------------ *
  *  Design tokens
- *  Palette: warm off-white paper · warm near-black ink · burgundy
+ *  A scrapbook / notebook language: ruled paper on a grid desk, with a
+ *  small set of flat marker colours. One ink, five markers, no gradients.
  * ------------------------------------------------------------------ */
 @theme {
-  --color-paper: #f4f1ea;
-  --color-paper-dim: #ebe6da;
-  --color-paper-deep: #e3ddce;
-  --color-ink: #1c1a17;
-  --color-ink-soft: #57514a;
-  --color-ink-faint: #8b8578;
-  --color-line: rgba(28, 26, 23, 0.14);
-  --color-line-strong: rgba(28, 26, 23, 0.28);
-  --color-accent: #7a2a30;
-  --color-accent-deep: #5c1e23;
+  --color-desk: #8d8e92;
+  --color-paper: #fbfaf6;
+  --color-paper-dim: #f1eee5;
+  --color-ink: #151515;
+  --color-ink-soft: #46433d;
+  --color-ink-faint: #77726a;
+  --color-line: rgba(21, 21, 21, 0.14);
+  --color-rule: rgba(60, 74, 110, 0.13);
+
+  /* markers */
+  --color-sun: #f2c23e;
+  --color-cobalt: #2f54d6;
+  --color-leaf: #2fb463;
+  --color-bubble: #ff5c93;
+  --color-ember: #f26a3d;
+  --color-tape: #eadfb8;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
-  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --font-pixel: "Pixelify Sans", "Courier New", ui-monospace, monospace;
+  --font-hand: "Gaegu", "Comic Sans MS", "Segoe Print", cursive;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas,
     monospace;
 }
@@ -28,19 +36,25 @@
  * ------------------------------------------------------------------ */
 @layer base {
   * {
-    border-color: var(--color-line);
+    border-color: var(--color-ink);
   }
 
   html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
+    scroll-padding-top: 5.5rem;
     overflow-x: hidden;
   }
 
   body {
     margin: 0;
-    background-color: var(--color-paper);
+    background-color: var(--color-desk);
+    /* the desk: flat grey with a light grid */
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.28) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.28) 2px, transparent 2px);
+    background-size: 56px 56px;
+    background-attachment: fixed;
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-size: 1rem;
@@ -48,7 +62,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-feature-settings: "kern", "liga", "calt";
     /* clip, not hidden: hidden on body spawns a nested scroll container */
     overflow-x: clip;
   }
@@ -57,10 +70,9 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: -0.015em;
-    line-height: 1.04;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
     text-wrap: balance;
   }
 
@@ -69,12 +81,12 @@
   }
 
   ::selection {
-    background: var(--color-accent);
-    color: var(--color-paper);
+    background: var(--color-sun);
+    color: var(--color-ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 3px solid var(--color-cobalt);
     outline-offset: 3px;
   }
 
@@ -90,39 +102,134 @@
 }
 
 /* ------------------------------------------------------------------ *
- *  Utilities
+ *  Components
  * ------------------------------------------------------------------ */
 @layer components {
-  /* Eyebrow / small technical label */
-  .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--color-ink-faint);
+  /* The notebook page everything sits on */
+  .page {
+    position: relative;
+    width: calc(100% - 1rem);
+    max-width: 74rem;
+    margin: 0.5rem auto 2rem;
+    background-color: var(--color-paper);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      var(--color-rule) 31px,
+      var(--color-rule) 32px
+    );
+    border: 2px solid var(--color-ink);
+    overflow-x: clip;
+  }
+  @media (min-width: 768px) {
+    .page {
+      width: calc(100% - 3rem);
+      margin: 1.5rem auto 3rem;
+    }
   }
 
-  /* Standard section rhythm + gutters */
+  /* Inner gutters */
   .shell {
     width: 100%;
-    max-width: 82rem;
     margin-inline: auto;
-    padding-inline: clamp(1.25rem, 5vw, 4.5rem);
+    padding-inline: clamp(1.1rem, 4.5vw, 4rem);
+  }
+
+  /* Small technical label */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* Hand-drawn section label: a boxed handwritten word */
+  .label-box {
+    display: inline-block;
+    font-family: var(--font-hand);
+    font-size: clamp(1.4rem, 3.4vw, 1.9rem);
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.35rem 0.9rem 0.45rem;
+    background: var(--color-paper);
+    border: 2px solid var(--color-ink);
+    transform: rotate(-1.2deg);
+  }
+
+  /* Sticker tag with torn (zig-zag) short edges */
+  .tag-torn {
+    --t: 5px;
+    display: inline-flex;
+    align-items: center;
+    height: 2.75rem;
+    padding: 0 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      calc(100% - var(--t)) 11%,
+      100% 22%,
+      calc(100% - var(--t)) 33%,
+      100% 44%,
+      calc(100% - var(--t)) 55%,
+      100% 66%,
+      calc(100% - var(--t)) 77%,
+      100% 88%,
+      calc(100% - var(--t)) 100%,
+      0 100%,
+      var(--t) 89%,
+      0 78%,
+      var(--t) 67%,
+      0 56%,
+      var(--t) 45%,
+      0 34%,
+      var(--t) 23%,
+      0 12%
+    );
+  }
+
+  /* Folder tab: slanted shoulders, same colour as the card it sits on */
+  .folder-tab {
+    --s: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: var(--tab-h, 2.5rem);
+    padding: 0 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    clip-path: polygon(0 100%, var(--s) 0, calc(100% - var(--s)) 0, 100% 100%);
+  }
+
+  /* Strip of masking tape */
+  .tape {
+    position: absolute;
+    width: 5rem;
+    height: 1.5rem;
+    background: color-mix(in oklab, var(--color-tape) 82%, transparent);
+    border: 1px solid rgba(21, 21, 21, 0.1);
+    pointer-events: none;
   }
 
   /* Animated underline for inline links */
   .link-underline {
     background-image: linear-gradient(currentColor, currentColor);
-    background-size: 0% 1px;
+    background-size: 0% 2px;
     background-position: 0 100%;
     background-repeat: no-repeat;
-    transition: background-size 0.35s cubic-bezier(0.2, 0.6, 0.2, 1);
-    padding-bottom: 1px;
+    transition: background-size 0.3s cubic-bezier(0.2, 0.6, 0.2, 1);
+    padding-bottom: 2px;
   }
   .link-underline:hover,
   .link-underline:focus-visible {
-    background-size: 100% 1px;
+    background-size: 100% 2px;
   }
 }
 
@@ -135,14 +242,13 @@
  * slow or missing observer never leaves a section blank. */
 .reveal-ready [data-reveal] {
   opacity: 0;
-  transform: translateY(14px);
+  translate: 0 14px;
   transition: opacity 0.7s cubic-bezier(0.2, 0.6, 0.2, 1),
-    transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
-  will-change: opacity, transform;
+    translate 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
 }
 .reveal-ready [data-reveal].is-visible {
   opacity: 1;
-  transform: none;
+  translate: 0 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -158,6 +264,6 @@
   }
   .reveal-ready [data-reveal] {
     opacity: 1;
-    transform: none;
+    translate: 0 0;
   }
 }

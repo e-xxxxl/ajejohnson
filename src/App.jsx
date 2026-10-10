@@ -56,16 +56,18 @@ export default function App() {
       >
         Skip to work
       </a>
-      <Nav />
-      <main>
-        <Hero />
-        <SelectedWork />
-        <About />
-        <BeyondTheCode />
-        <Capabilities />
-        <Contact />
-      </main>
-      <SignatureFooter />
+      <div className="page">
+        <Nav />
+        <main>
+          <Hero />
+          <SelectedWork />
+          <About />
+          <BeyondTheCode />
+          <Capabilities />
+          <Contact />
+        </main>
+        <SignatureFooter />
+      </div>
     </>
   )
 }
