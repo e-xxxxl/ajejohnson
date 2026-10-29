@@ -8,6 +8,9 @@ const OUT = path.resolve("src/assets/images/work/opt");
 // Screenshots are captured tall; crop to a comfortable browser-viewport ratio
 // so the strongest part of each page leads.
 const CROP_RATIO = 1600 / 1120;
+// Phone-first products are captured on a mobile viewport and kept portrait.
+const PORTRAIT = new Set(["linky"]);
+const PORTRAIT_RATIO = 3 / 4;
 
 await mkdir(OUT, { recursive: true });
 const files = (await readdir(SRC)).filter((f) => /\.(png|jpe?g)$/i.test(f));
@@ -16,7 +19,8 @@ for (const file of files) {
   const name = file.replace(/\.(png|jpe?g)$/i, "");
   const input = path.join(SRC, file);
   const meta = await sharp(input).metadata();
-  const targetH = Math.min(meta.height, Math.round(meta.width / CROP_RATIO));
+  const ratio = PORTRAIT.has(name) ? PORTRAIT_RATIO : CROP_RATIO;
+  const targetH = Math.min(meta.height, Math.round(meta.width / ratio));
 
   for (const w of [1600, 900]) {
     await sharp(input)

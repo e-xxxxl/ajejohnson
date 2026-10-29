@@ -1,11 +1,15 @@
-import genpay from '../assets/images/work/opt/genpay.webp'
-import genpaySm from '../assets/images/work/opt/genpay-sm.webp'
-import talknaija from '../assets/images/work/opt/talknaija.webp'
-import talknaijaSm from '../assets/images/work/opt/talknaija-sm.webp'
-import quickship from '../assets/images/work/opt/quickship.webp'
-import quickshipSm from '../assets/images/work/opt/quickship-sm.webp'
 import ekounited from '../assets/images/work/opt/ekounited.webp'
 import ekounitedSm from '../assets/images/work/opt/ekounited-sm.webp'
+import linky from '../assets/images/work/opt/linky.webp'
+import linkySm from '../assets/images/work/opt/linky-sm.webp'
+import ajcourier from '../assets/images/work/opt/ajcourier.webp'
+import ajcourierSm from '../assets/images/work/opt/ajcourier-sm.webp'
+import talknaija from '../assets/images/work/opt/talknaija.webp'
+import talknaijaSm from '../assets/images/work/opt/talknaija-sm.webp'
+import genpay from '../assets/images/work/opt/genpay.webp'
+import genpaySm from '../assets/images/work/opt/genpay-sm.webp'
+import quickship from '../assets/images/work/opt/quickship.webp'
+import quickshipSm from '../assets/images/work/opt/quickship-sm.webp'
 import affectionate from '../assets/images/work/opt/affectionate.webp'
 import affectionateSm from '../assets/images/work/opt/affectionate-sm.webp'
 import fembos from '../assets/images/work/opt/fembos.webp'
@@ -13,27 +17,67 @@ import fembosSm from '../assets/images/work/opt/fembos-sm.webp'
 
 /**
  * Ordered by how strongly each project demonstrates the range of the work,
- * not chronologically. The first four carry full case-study layouts; the
- * last two sit in a compact secondary row.
+ * not chronologically. The first five carry full case-study folders; the
+ * rest sit in a compact secondary row. `portrait` marks a phone-first
+ * product whose screenshot is a mobile capture.
  */
 export const projects = [
   {
-    id: 'genpay',
-    name: 'GenPay',
-    type: 'Ticketing & digital events platform',
-    role: 'Full-stack development, with Tekuvo and Marvex',
-    stack: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Paystack'],
+    id: 'ekounited',
+    name: 'Eko United FC',
+    type: 'Football club website',
+    role: 'Full-stack development',
+    stack: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     description:
-      'GenPay is a platform for discovering events and handling tickets end to end: browsing what is on, buying and reselling tickets, and managing an account around it. It is built to behave like a product, not a brochure.',
+      'The official site for a Lagos football club, with club news, fixtures and results, a squad section, and shop and ticketing entry points, held together under one identity.',
     contributions: [
-      'Event discovery and browsing',
-      'Ticket purchase and resale flows',
-      'Accounts, authentication and payments',
+      'News and press-release publishing',
+      'Fixtures, results and squad sections',
+      'Shop and ticketing entry points',
     ],
-    href: 'https://genpay.ng',
-    image: genpay,
-    imageSmall: genpaySm,
-    alt: 'GenPay events and ticketing platform homepage',
+    href: 'https://ekounitedfc.com',
+    image: ekounited,
+    imageSmall: ekounitedSm,
+    alt: 'Eko United FC official website homepage',
+    tier: 'featured',
+  },
+  {
+    id: 'linky',
+    name: 'Linky',
+    type: 'Link safety checker',
+    role: 'Full-stack development, built end to end',
+    stack: ['Next.js', 'React'],
+    description:
+      'A mobile-first tool for checking a suspicious link before you open it. Paste a URL and Linky inspects things like domain age and look-alike tricks, then returns a plain verdict with a score and the reasons behind it.',
+    contributions: [
+      'Paste-and-scan flow with an instant verdict and score',
+      'Scan history and a reviews page',
+      'App-style mobile layout with a bottom tab bar',
+    ],
+    href: 'https://linky.tekuvo.com.ng',
+    image: linky,
+    imageSmall: linkySm,
+    alt: 'Linky link scanner on a phone, showing the paste and scan field',
+    tier: 'featured',
+    portrait: true,
+  },
+  {
+    id: 'ajcourier',
+    name: 'AJ Courier & Logistics',
+    type: 'Courier & logistics platform',
+    role: 'Full-stack development',
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Paystack', 'Google Maps'],
+    description:
+      'A delivery platform for a Lagos courier company. Customers book a rider, see the fare before they pay, and follow the parcel from pickup to drop-off. Interstate, international, air and sea shipping sit under the same account.',
+    contributions: [
+      'Booking flow with route, distance and fare calculation',
+      'Online payments and live delivery status tracking',
+      'Admin dashboard for bookings, status updates and pricing',
+    ],
+    href: 'https://ajcourierlogistics.com',
+    image: ajcourier,
+    imageSmall: ajcourierSm,
+    alt: 'AJ Courier & Logistics homepage with the same-day delivery headline',
     tier: 'featured',
   },
   {
@@ -56,6 +100,25 @@ export const projects = [
     tier: 'featured',
   },
   {
+    id: 'genpay',
+    name: 'GenPay',
+    type: 'Ticketing & digital events platform',
+    role: 'Full-stack development, with Tekuvo and Marvex',
+    stack: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Paystack'],
+    description:
+      'GenPay is a platform for discovering events and handling tickets end to end: browsing what is on, buying and reselling tickets, and managing an account around it. It is built to behave like a product, not a brochure.',
+    contributions: [
+      'Event discovery and browsing',
+      'Ticket purchase and resale flows',
+      'Accounts, authentication and payments',
+    ],
+    href: 'https://genpay.ng',
+    image: genpay,
+    imageSmall: genpaySm,
+    alt: 'GenPay events and ticketing platform homepage',
+    tier: 'featured',
+  },
+  {
     id: 'quickship',
     name: 'QuickShip Africa',
     type: 'Logistics & delivery platform',
@@ -72,26 +135,7 @@ export const projects = [
     image: quickship,
     imageSmall: quickshipSm,
     alt: 'QuickShip Africa logistics platform homepage',
-    tier: 'featured',
-  },
-  {
-    id: 'ekounited',
-    name: 'Eko United FC',
-    type: 'Football club website',
-    role: 'Full-stack development',
-    stack: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
-    description:
-      'The official site for a Lagos football club, with club news, fixtures and results, a squad section, and shop and ticketing entry points, held together under one identity.',
-    contributions: [
-      'News and press-release publishing',
-      'Fixtures, results and squad sections',
-      'Shop and ticketing entry points',
-    ],
-    href: 'https://ekounitedfc.com',
-    image: ekounited,
-    imageSmall: ekounitedSm,
-    alt: 'Eko United FC official website with a press-release feature',
-    tier: 'featured',
+    tier: 'secondary',
   },
   {
     id: 'affectionate',

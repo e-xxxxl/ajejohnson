@@ -5,14 +5,14 @@ const NOTES = [
     label: 'Arsenal',
     body: 'Through the good seasons and the other kind. It is the one commitment I do not try to rationalise.',
     tone: 'bg-sun',
-    tilt: '-rotate-2',
+    tilt: '-rotate-1',
     tape: '-rotate-6',
   },
   {
     label: 'Chess',
     body: 'Mostly online, mostly quick games. A steady reminder that a plan only holds until the position changes.',
     tone: 'bg-leaf',
-    tilt: 'rotate-1',
+    tilt: 'rotate-[0.5deg]',
     tape: 'rotate-3',
   },
   {
@@ -30,7 +30,7 @@ export default function BeyondTheCode() {
       <div className="shell">
         <Reveal className="text-center">
           <h2 className="label-box">beyond the code</h2>
-          <p className="mx-auto mt-6 max-w-2xl font-hand text-[clamp(1.5rem,3.6vw,2rem)] leading-snug">
+          <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-ink-soft sm:text-lg">
             Away from the screen, I follow Arsenal, play a fair amount of
             chess, and go looking for problems that seem a little out of
             reach.
@@ -50,7 +50,7 @@ export default function BeyondTheCode() {
                 <h3 className="font-hand text-[2rem] font-bold leading-none">
                   {note.label}
                 </h3>
-                <p className="mt-3 font-hand text-[1.3rem] leading-[1.2]">
+                <p className="mt-3 text-[0.95rem] leading-relaxed">
                   {note.body}
                 </p>
               </div>

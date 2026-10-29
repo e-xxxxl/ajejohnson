@@ -4,12 +4,14 @@ import { ArrowUpRight, Spark } from './Icons'
 
 /* One flat marker colour per folder. Text colours are chosen for contrast. */
 const THEMES = {
-  genpay: { bg: 'bg-ink', fg: 'text-paper', soft: 'text-paper/75', rule: 'border-paper/25' },
-  talknaija: { bg: 'bg-sun', fg: 'text-ink', soft: 'text-ink/75', rule: 'border-ink/25' },
-  quickship: { bg: 'bg-cobalt', fg: 'text-paper', soft: 'text-paper/80', rule: 'border-paper/30' },
-  ekounited: { bg: 'bg-leaf', fg: 'text-ink', soft: 'text-ink/75', rule: 'border-ink/25' },
-  affectionate: { bg: 'bg-bubble', fg: 'text-ink', soft: 'text-ink/75', rule: 'border-ink/25' },
-  fembos: { bg: 'bg-ember', fg: 'text-ink', soft: 'text-ink/75', rule: 'border-ink/25' },
+  ekounited: { bg: 'bg-cobalt', fg: 'text-paper', soft: 'text-paper/80', rule: 'border-paper/30' },
+  linky: { bg: 'bg-ink', fg: 'text-paper', soft: 'text-paper/75', rule: 'border-paper/25' },
+  ajcourier: { bg: 'bg-ember', fg: 'text-ink', soft: 'text-ink/80', rule: 'border-ink/25' },
+  talknaija: { bg: 'bg-sun', fg: 'text-ink', soft: 'text-ink/80', rule: 'border-ink/25' },
+  genpay: { bg: 'bg-bubble', fg: 'text-ink', soft: 'text-ink/80', rule: 'border-ink/25' },
+  quickship: { bg: 'bg-leaf', fg: 'text-ink', soft: 'text-ink/80', rule: 'border-ink/25' },
+  affectionate: { bg: 'bg-cobalt', fg: 'text-paper', soft: 'text-paper/80', rule: 'border-paper/30' },
+  fembos: { bg: 'bg-sun', fg: 'text-ink', soft: 'text-ink/80', rule: 'border-ink/25' },
 }
 
 const pad = (n) => String(n).padStart(2, '0')
@@ -29,9 +31,15 @@ function Tab({ n, theme }) {
   )
 }
 
-function Screenshot({ project, priority = false, sizes, tilt = 'rotate-[1.5deg]', small = false }) {
+function Screenshot({ project, priority = false, sizes, tilt = 'rotate-[1deg]', small = false }) {
+  const portrait = project.portrait
+  const useSrcSet = !small && !portrait
   return (
-    <div className="relative mx-auto w-full max-w-xl">
+    <div
+      className={`relative mx-auto w-full ${
+        portrait ? 'max-w-[17rem] sm:max-w-[19rem]' : 'max-w-xl'
+      }`}
+    >
       <span aria-hidden="true" className="tape -left-4 -top-2 -rotate-[28deg]" />
       <span aria-hidden="true" className="tape -right-4 -top-2 rotate-[28deg]" />
       <a
@@ -39,21 +47,25 @@ function Screenshot({ project, priority = false, sizes, tilt = 'rotate-[1.5deg]'
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Open ${project.name} in a new tab`}
-        className={`group/img block border-[3px] border-paper bg-paper transition-transform duration-500 ease-out hover:rotate-0 motion-reduce:transition-none ${tilt}`}
+        className={`block border-[3px] border-paper bg-paper transition-transform duration-500 ease-out hover:rotate-0 motion-reduce:transition-none ${tilt}`}
       >
         <img
           src={small ? project.imageSmall : project.image}
           srcSet={
-            small ? undefined : `${project.imageSmall} 900w, ${project.image} 1600w`
+            useSrcSet
+              ? `${project.imageSmall} 900w, ${project.image} 1600w`
+              : undefined
           }
           sizes={sizes}
-          width="1600"
-          height="1120"
+          width={portrait ? '750' : '1600'}
+          height={portrait ? '1000' : '1120'}
           alt={project.alt}
           loading={priority ? 'eager' : 'lazy'}
           decoding="async"
           fetchPriority={priority ? 'high' : 'auto'}
-          className="aspect-[1600/1120] w-full object-cover object-top"
+          className={`w-full object-cover object-top ${
+            portrait ? 'aspect-[3/4]' : 'aspect-[1600/1120]'
+          }`}
         />
       </a>
     </div>
@@ -156,7 +168,7 @@ function FeaturedFolder({ project, n, last }) {
             project={project}
               priority={n === 1}
             sizes="(min-width: 1024px) 36rem, 90vw"
-            tilt={flip ? '-rotate-[1.5deg]' : 'rotate-[1.5deg]'}
+            tilt={flip ? '-rotate-[1deg]' : 'rotate-[1deg]'}
           />
         </div>
       </div>
@@ -174,7 +186,7 @@ function CompactFolder({ project, n }) {
           project={project}
           small
           sizes="(min-width: 1024px) 26rem, 90vw"
-          tilt={n % 2 ? 'rotate-[1.5deg]' : '-rotate-[1.5deg]'}
+          tilt={n % 2 ? 'rotate-[1deg]' : '-rotate-[1deg]'}
         />
         <p className="eyebrow mt-9 flex items-center gap-2">
           <span aria-hidden="true" className="h-2 w-2 bg-current" />
@@ -208,8 +220,8 @@ export default function SelectedWork() {
       <div className="shell">
         <Reveal className="text-center">
           <h2 className="label-box">selected work</h2>
-          <p className="mx-auto mt-6 max-w-xl font-hand text-[clamp(1.4rem,3.2vw,1.8rem)] leading-snug">
-            A short list on purpose. Six products and sites, chosen for range
+          <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-ink-soft sm:text-lg">
+            A short list on purpose. Eight products and sites, chosen for range
             rather than count: commerce, publishing, logistics, healthcare and
             more, each taken from brief to live.
           </p>
@@ -228,13 +240,13 @@ export default function SelectedWork() {
 
         <Reveal className="mt-20 text-center sm:mt-28">
           <h3 className="label-box !text-[clamp(1.2rem,3vw,1.5rem)]">also built</h3>
-          <p className="mx-auto mt-5 max-w-md font-hand text-2xl leading-snug">
+          <p className="mx-auto mt-5 max-w-md text-balance text-base leading-relaxed text-ink-soft sm:text-lg">
             Two more sites where the work was mostly design and front-end.
             Still shipped, still in use.
           </p>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-14 lg:grid-cols-3">
           {secondaryProjects.map((project, i) => (
             <CompactFolder
               key={project.id}

@@ -57,7 +57,7 @@ export default function Capabilities() {
       <div className="shell">
         <Reveal className="text-center">
           <h2 className="label-box">what I actually do</h2>
-          <p className="mx-auto mt-6 max-w-md font-hand text-[clamp(1.4rem,3.2vw,1.8rem)] leading-snug">
+          <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-ink-soft sm:text-lg">
             Day to day, this is the work.
           </p>
         </Reveal>

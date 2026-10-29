@@ -155,7 +155,7 @@
     padding: 0.35rem 0.9rem 0.45rem;
     background: var(--color-paper);
     border: 2px solid var(--color-ink);
-    transform: rotate(-1.2deg);
+    transform: rotate(-0.6deg);
   }
 
   /* Sticker tag with torn (zig-zag) short edges */
