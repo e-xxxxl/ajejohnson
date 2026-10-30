@@ -1,4 +1,4 @@
-import { featuredProjects, secondaryProjects } from '../data/projects'
+import { clientFeatured, clientSecondary, personalProjects } from '../data/projects'
 import Reveal from './Reveal'
 import { ArrowUpRight, Spark } from './Icons'
 
@@ -7,6 +7,7 @@ const THEMES = {
   ekounited: { bg: 'bg-cobalt', fg: 'text-paper', soft: 'text-paper/80', rule: 'border-paper/30' },
   linky: { bg: 'bg-ink', fg: 'text-paper', soft: 'text-paper/75', rule: 'border-paper/25' },
   ajcourier: { bg: 'bg-ember', fg: 'text-ink', soft: 'text-ink/80', rule: 'border-ink/25' },
+  tradies: { bg: 'bg-leaf', fg: 'text-ink', soft: 'text-ink/80', rule: 'border-ink/25' },
   talknaija: { bg: 'bg-sun', fg: 'text-ink', soft: 'text-ink/80', rule: 'border-ink/25' },
   genpay: { bg: 'bg-bubble', fg: 'text-ink', soft: 'text-ink/80', rule: 'border-ink/25' },
   quickship: { bg: 'bg-leaf', fg: 'text-ink', soft: 'text-ink/80', rule: 'border-ink/25' },
@@ -132,7 +133,7 @@ function ViewLink({ project }) {
   )
 }
 
-function FeaturedFolder({ project, n, last }) {
+function FeaturedFolder({ project, n, last, priority = false }) {
   const theme = THEMES[project.id]
   const flip = n % 2 === 0
   return (
@@ -166,7 +167,7 @@ function FeaturedFolder({ project, n, last }) {
 
           <Screenshot
             project={project}
-              priority={n === 1}
+            priority={priority}
             sizes="(min-width: 1024px) 36rem, 90vw"
             tilt={flip ? '-rotate-[1deg]' : 'rotate-[1deg]'}
           />
@@ -214,6 +215,26 @@ function CompactFolder({ project, n }) {
   )
 }
 
+function GroupHeading({ title, lead, id }) {
+  return (
+    <Reveal className="text-center">
+      <div className="flex items-center gap-4">
+        <span aria-hidden="true" className="h-[2px] flex-1 bg-ink" />
+        <h3
+          id={id}
+          className="font-pixel text-[clamp(1.6rem,4.6vw,2.6rem)] font-bold uppercase leading-none tracking-[0.04em]"
+        >
+          {title}
+        </h3>
+        <span aria-hidden="true" className="h-[2px] flex-1 bg-ink" />
+      </div>
+      <p className="mx-auto mt-4 max-w-md text-balance text-base leading-relaxed text-ink-soft">
+        {lead}
+      </p>
+    </Reveal>
+  )
+}
+
 export default function SelectedWork() {
   return (
     <section id="work" className="scroll-mt-20 border-t-2 border-ink py-16 sm:py-24">
@@ -221,39 +242,61 @@ export default function SelectedWork() {
         <Reveal className="text-center">
           <h2 className="label-box">selected work</h2>
           <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-ink-soft sm:text-lg">
-            A short list on purpose. Eight products and sites, chosen for range
-            rather than count: commerce, publishing, logistics, healthcare and
-            more, each taken from brief to live.
+            A short list on purpose, chosen for range rather than count:
+            commerce, publishing, logistics, healthcare and more, split into
+            what I built for clients and what I built for myself.
           </p>
         </Reveal>
 
-        <div className="mt-12 sm:mt-16">
-          {featuredProjects.map((project, i) => (
-            <FeaturedFolder
-              key={project.id}
-              project={project}
-              n={i + 1}
-              last={i === featuredProjects.length - 1}
-            />
-          ))}
+        {/* Client work */}
+        <div className="mt-14 sm:mt-20">
+          <GroupHeading
+            id="client-work"
+            title="Client work"
+            lead="Sites and platforms built for businesses and organisations."
+          />
+
+          <div className="mt-12">
+            {clientFeatured.map((project, i) => (
+              <FeaturedFolder
+                key={project.id}
+                project={project}
+                n={i + 1}
+                priority={i === 0}
+                last={i === clientFeatured.length - 1}
+              />
+            ))}
+          </div>
+
+          <div className="mt-20 grid grid-cols-1 gap-x-6 gap-y-14 lg:grid-cols-3">
+            {clientSecondary.map((project, i) => (
+              <CompactFolder
+                key={project.id}
+                project={project}
+                n={clientFeatured.length + i + 1}
+              />
+            ))}
+          </div>
         </div>
 
-        <Reveal className="mt-20 text-center sm:mt-28">
-          <h3 className="label-box !text-[clamp(1.2rem,3vw,1.5rem)]">also built</h3>
-          <p className="mx-auto mt-5 max-w-md text-balance text-base leading-relaxed text-ink-soft sm:text-lg">
-            Two more sites where the work was mostly design and front-end.
-            Still shipped, still in use.
-          </p>
-        </Reveal>
+        {/* Personal work */}
+        <div className="mt-24 sm:mt-32">
+          <GroupHeading
+            id="personal-work"
+            title="My own work"
+            lead="Products I designed and built myself."
+          />
 
-        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-14 lg:grid-cols-3">
-          {secondaryProjects.map((project, i) => (
-            <CompactFolder
-              key={project.id}
-              project={project}
-              n={featuredProjects.length + i + 1}
-            />
-          ))}
+          <div className="mt-12">
+            {personalProjects.map((project, i) => (
+              <FeaturedFolder
+                key={project.id}
+                project={project}
+                n={i + 1}
+                last={i === personalProjects.length - 1}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -6,6 +6,8 @@ import ajcourier from '../assets/images/work/opt/ajcourier.webp'
 import ajcourierSm from '../assets/images/work/opt/ajcourier-sm.webp'
 import talknaija from '../assets/images/work/opt/talknaija.webp'
 import talknaijaSm from '../assets/images/work/opt/talknaija-sm.webp'
+import tradies from '../assets/images/work/opt/tradies.webp'
+import tradiesSm from '../assets/images/work/opt/tradies-sm.webp'
 import genpay from '../assets/images/work/opt/genpay.webp'
 import genpaySm from '../assets/images/work/opt/genpay-sm.webp'
 import quickship from '../assets/images/work/opt/quickship.webp'
@@ -16,18 +18,20 @@ import fembos from '../assets/images/work/opt/fembos.webp'
 import fembosSm from '../assets/images/work/opt/fembos-sm.webp'
 
 /**
- * Ordered by how strongly each project demonstrates the range of the work,
- * not chronologically. The first five carry full case-study folders; the
- * rest sit in a compact secondary row. `portrait` marks a phone-first
- * product whose screenshot is a mobile capture.
+ * Two groups: `client` (built for someone else) and `personal` (my own
+ * products). Within each group the order reflects how strongly a project
+ * shows the range of the work, not chronology. `featured` projects get a
+ * full case-study folder, `secondary` ones a compact card. `portrait`
+ * marks a phone-first product whose screenshot is a mobile capture.
  */
 export const projects = [
   {
     id: 'ekounited',
+    group: 'client',
     name: 'Eko United FC',
     type: 'Football club website',
     role: 'Full-stack development',
-    stack: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+    stack: ['React', 'Node.js', 'Tailwind CSS'],
     description:
       'The official site for a Lagos football club, with club news, fixtures and results, a squad section, and shop and ticketing entry points, held together under one identity.',
     contributions: [
@@ -43,6 +47,7 @@ export const projects = [
   },
   {
     id: 'linky',
+    group: 'personal',
     name: 'Linky',
     type: 'Link safety checker',
     role: 'Full-stack development, built end to end',
@@ -63,10 +68,11 @@ export const projects = [
   },
   {
     id: 'ajcourier',
+    group: 'client',
     name: 'AJ Courier & Logistics',
     type: 'Courier & logistics platform',
     role: 'Full-stack development',
-    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Paystack', 'Google Maps'],
+    stack: ['React', 'Node.js', 'Express', 'Paystack', 'Google Maps'],
     description:
       'A delivery platform for a Lagos courier company. Customers book a rider, see the fare before they pay, and follow the parcel from pickup to drop-off. Interstate, international, air and sea shipping sit under the same account.',
     contributions: [
@@ -82,10 +88,11 @@ export const projects = [
   },
   {
     id: 'talknaija',
+    group: 'client',
     name: 'TalkNaija Media',
     type: 'News & media publishing platform',
     role: 'Full-stack development',
-    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+    stack: ['React', 'Node.js', 'Express', 'Tailwind CSS'],
     description:
       'A publishing platform for a Nigerian news outlet: a fast, category-driven reading experience on the front, and the editorial tooling to write, organise and publish behind it.',
     contributions: [
@@ -100,11 +107,32 @@ export const projects = [
     tier: 'featured',
   },
   {
+    id: 'tradies',
+    group: 'client',
+    name: '9jaTradiesPages',
+    type: 'Service provider directory',
+    role: 'Full-stack development',
+    stack: ['React'],
+    description:
+      'A directory for finding tradespeople and service providers. Visitors search by category, narrow by state and city, browse provider profiles, and message a professional directly without leaving the app.',
+    contributions: [
+      'Category, state and city search',
+      'Provider profiles and in-app messaging',
+      'Sign-up and sign-in for customers and providers',
+    ],
+    href: 'https://9jatradiespages.com',
+    image: tradies,
+    imageSmall: tradiesSm,
+    alt: '9jaTradiesPages homepage with the find a professional headline',
+    tier: 'featured',
+  },
+  {
     id: 'genpay',
+    group: 'personal',
     name: 'GenPay',
     type: 'Ticketing & digital events platform',
     role: 'Full-stack development, with Tekuvo and Marvex',
-    stack: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Paystack'],
+    stack: ['React', 'Tailwind CSS', 'Node.js', 'Paystack'],
     description:
       'GenPay is a platform for discovering events and handling tickets end to end: browsing what is on, buying and reselling tickets, and managing an account around it. It is built to behave like a product, not a brochure.',
     contributions: [
@@ -120,10 +148,11 @@ export const projects = [
   },
   {
     id: 'quickship',
+    group: 'client',
     name: 'QuickShip Africa',
     type: 'Logistics & delivery platform',
     role: 'Full-stack development',
-    stack: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+    stack: ['React', 'Node.js', 'Tailwind CSS'],
     description:
       'QuickShip handles local and international shipping requests. Customers book a delivery, follow it from pickup to drop-off, and the team works from a shared view of every shipment.',
     contributions: [
@@ -139,6 +168,7 @@ export const projects = [
   },
   {
     id: 'affectionate',
+    group: 'client',
     name: 'Affectionate Living Care',
     type: 'Home-care provider',
     role: 'Design & front-end development',
@@ -157,6 +187,7 @@ export const projects = [
   },
   {
     id: 'fembos',
+    group: 'client',
     name: 'Fembos Global Services',
     type: 'Corporate & industrial website',
     role: 'Redesign & front-end development',
@@ -175,5 +206,8 @@ export const projects = [
   },
 ]
 
-export const featuredProjects = projects.filter((p) => p.tier === 'featured')
-export const secondaryProjects = projects.filter((p) => p.tier === 'secondary')
+const by = (group, tier) => projects.filter((p) => p.group === group && p.tier === tier)
+
+export const clientFeatured = by('client', 'featured')
+export const clientSecondary = by('client', 'secondary')
+export const personalProjects = projects.filter((p) => p.group === 'personal')
